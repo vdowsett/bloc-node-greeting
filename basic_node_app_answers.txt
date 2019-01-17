@@ -1,0 +1,17 @@
+1. What is a Node module?
+
+A note module is a collection of functions grouped into a module that we can then include in our application. This is similar to Javascrip libraries.
+
+2.  What is the main difference between exports and module.exports?
+
+`module` is a private Javascrip object called module that has an exports property, which looks like this: `module.exports`. When you run 'require()` it returns the the object referenced by module.exports. It is a reference to a plain Javascript object. Therefor, you can reasign the value of the object later in your code if you overright module.exports. Another way to look at this is: `var module = { exports: {} };` with the require method being `return module.exports;`
+
+`exports` is a Javascript variable that you set to reference the module.exports method in a more convenient way so you can write less code. In itself it is never returned. Another way to look at it is `var exports = module.exports`. So if you set `exports.example = 100;` it will set the module object, or in other words `module.exports.example = 100`. 
+
+3. Why is using exports recommended?
+
+To avoid overriding modules.export. If you attach methods or values to module.exports then everything on exports will be ignored.
+
+References: 
+    https://medium.freecodecamp.org/node-js-module-exports-vs-exports-ec7e254d63ac 
+    https://medium.com/@geekguy/javascript-modues-exports-vs-exports-whats-the-difference-9a61cdb99386 
